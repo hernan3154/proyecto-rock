@@ -1,0 +1,204 @@
+{% load static %}
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+
+  <head>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+      </style>
+    <script src="../assets/js/color-modes.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.118.2">
+    <title>Mi Genio Amor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+    </script>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/cs.css'%}">
+    <link href="{% static 'css/carousel.css'%}" rel="stylesheet">
+    <link href="{%static 'css/carousel.rtl.css'%}" rel="stylesheet">
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+    <link rel="stylesheet" href="{%static 'css/style-footer.css'%}">
+    <style>
+      body {
+        overflow-x: hidden;
+      }
+  .acme-regular {
+  font-family: "Acme", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body style=" background-color: red;">
+    <!-- Aquí va tu barra de navegación -->
+    <header data-bs-theme="dark"
+      style="background-image: url('/static/fondo-nav/artwork.png'); background-size: cover; background-position: center;">
+
+      <div class="d-flex align-items-center justify-content-end p-3">
+        {% if request.user.is_authenticated %}
+        <p style="display: inline-block; margin-right: 10px; color: aliceblue;">Bienvenido, {{ request.user.username }}
+        </p>
+        <a href="{% url 'modificar_datos_usuario' %}" class="btn btn-outline-info" type="button">Modificar datos</a>
+
+        <a href="{% url 'logout' %}" class="btn btn-outline-danger" type="button" onclick="logoutUser()">Cerrar
+          sesión</a>
+
+        {% else %}{% load static %}
+
+        <a href="{% url 'registro' %}" class="btn btn-outline-danger" style="margin-right: 20px; margin-top: 10px;"
+          type="submit">Registro</a>
+
+
+        <a href="{% url 'inicio-sesion' %}" class="btn btn-outline-danger"
+          style="margin-top: 10px; padding-right: 25px;" type="submit">Inicio de sesión</a>
+
+        {% endif %}
+      </div>
+      <nav class=" navbar navbar-expand-md navbar-dark" style="height: 100%;">
+        <div class="container-fluid">
+          <a class="navbar-brand img-fluid" href="{% url 'Home' %}"> <img src="{%static '/img/logo/1LOGO-removebg-preview.png'%}"
+              alt="" style="height: 260px;"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0 mx-auto" style="font-size: 25px;">
+              <li class="nav-item  {% if request.path == 'Home' %} active {% endif%} me-3  btn-outline-danger">
+                <a class="nav-link " aria-current="page" href="{% url 'Home' %}">Home</a>
+              </li>
+              {% if not request.user.is_authenticated %}
+              <li class="nav-item  {% if request.path == 'Home' %} active {% endif%} me-3  btn-outline-danger">
+                <a class="nav-link " aria-current="page" href="{% url 'registro' %}">Galeria</a>
+              </li>
+
+              <li class="nav-item  {% if request.path == 'Home' %} active {% endif%} me-3  btn-outline-danger">
+                <a class="nav-link " aria-current="page" href="{% url 'quienesSomos' %}">Quienes somos </a>
+              </li>
+
+              <li class="nav-item  {% if request.path == 'Home' %} active {% endif%} me-3  btn-outline-danger">
+                <a class="nav-link " aria-current="page" href="{% url 'contacto' %}">Contacto </a>
+              </li>
+              {% endif %}
+
+              {% if request.user.is_authenticated %}
+              <li class="nav-item {% if request.path == 'Home' %} active {% endif%} ">
+                <a class="nav-link  btn  btn-outline-danger me-3 " href="{% url 'Indio' %}">Indio</a>
+
+              </li>
+              <li class="nav-item">
+                <a class="nav-link btn btn-outline-danger me-3 " aria-disabled="true" href="{% url 'LaRenga' %}">La
+                  Renga</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link btn btn-outline-danger me-3" aria-disabled="true"
+                  href="{% url 'Divididos' %}">Divididos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link btn btn-outline-danger me-3" aria-disabled="true" href="{% url 'Ciro' %}">Ciro</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link btn btn-outline-danger me-3" aria-disabled="true" href="{% url 'LasPelotas' %}">Las
+                  Pelotas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link btn btn-outline-danger me-3" aria-disabled="true" href="{% url 'ntvg' %}">No Te Va
+                  Gustar</a>
+              </li>
+              {% endif %}
+            </ul>
+
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!--Contenido cambiante-->
+
+    {% block content %}
+
+
+    {% endblock %}
+
+    <!--*****************************************************************************************-->
+    <!-- FOOTER -->
+    
+    <div class="container " style="max-width: 100%;">
+      <div class="b-example-divider"></div>
+      <footer class="d-flex flex-wrap justify-content-between align-items-center py-0 my-2" >
+        <div class="col-md-4 d-flex align-items-center">
+          <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+            <svg class="bi" width="30" height="24">
+              <image href="{% static '/img/logo/logo-rfondo.png'%}" width="30" height="24" />
+            </svg>
+          </a>
+          <span class="mb-3 mb-md-0 text-body-secondary"
+            style="font-size: 20px; color: black; font-weight: bold;">&copy; 2024 Mi Genio Amor S.A</span>
+        </div>
+
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+          <li class="ms-3"><a class="text-body-secondary" href="https://twitter.com/?lang=es" target="_blank"><i
+                class="fab fa-twitter fa-2x"></i></a></li>
+          <li class="ms-3"><a class="text-body-secondary" href="https://www.instagram.com/" target="_blank"><i
+                class="fab fa-instagram fa-2x" style="color: #070707;"></i></a></li>
+          <li class="ms-3"><a class="text-body-secondary" href="https://www.facebook.com/" target="_blank"><i
+                class="fab fa-facebook fa-2x" style="color: blue;"></i></a></li>
+          <li class="ms-3"><a class="text-body-secondary" href="https://www.whatsapp.com/?lang=es_LA" target="_blank"><i
+                class="fab fa-whatsapp fa-2x" style="color: #0f8604;"></i></a></li>
+        </ul>
+        
+      </footer>
+    </div>
+
+    
+    <div class="container" style="max-width: 100%;">
+      <footer class="py-0 my-0">
+        <ul class="nav justify-content-center pb-3 mb-3" style="font-size: medium;">
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted"><b>Home</b></a></li>
+          <li class="nav-item"><a href="{% url 'quienesSomos' %}" class="nav-link px-2 text-muted"><b>Quienes Somos</b></a></li>
+          <li class="nav-item"><a href="{% url 'contacto' %}" class="nav-link px-2 text-muted"><b>Contacto</b></a></li>
+          <li class="nav-item"><a href="{% url 'inicio-sesion' %}" class="nav-link px-2 text-muted"><b>Galeria</b></a></li>
+        </ul>
+      </footer>
+      <div class="b-example-divider"></div>
+    </div>
+    
+
+    
+    </div>
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/9c91d36df0.js" crossorigin="anonymous"></script>
+    <!--<script src="{% static '/static/js/manejo-botones-in-re.js'%}"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+
+</html>

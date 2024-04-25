@@ -1,0 +1,32 @@
+body{
+    background-image: url(/static/fondo-nav/artwork.png);
+}
+
+
+.formPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    /* Ajusta la altura para centrar verticalmente */
+}
+
+.content-box {
+    border: 6px solid #fd0000;
+    border: 6px solid #fd0000;
+    border-radius: 39px 39px 39px 39px;
+    -webkit-border-radius: 39px 39px 39px 39px;
+    -moz-border-radius: 39px 39px 39px 39px;
+    text-align: center;
+    box-shadow: 18px 10px 107px 54px rgba(0, 0, 0, 0.45);
+    -webkit-box-shadow: 18px 10px 107px 54px rgba(0, 0, 0, 0.45);
+    -moz-box-shadow: 18px 10px 107px 54px rgba(0, 0, 0, 0.45);
+    /* Centra el contenido horizontalmente */
+    color: aliceblue;
+}
+
+main a {
+    text-decoration: none;
+    color: aliceblue;
+
+}

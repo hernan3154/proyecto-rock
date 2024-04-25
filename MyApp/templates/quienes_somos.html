@@ -1,0 +1,68 @@
+{% extends "plantillab/base.html"%}
+{% load static %}
+{% block content %}
+
+
+<bodi>
+    <head>
+        <!--<link rel="stylesheet" href="{% static 'css/Inicio.css'%}">-->
+        <title>Quienes somos </title>
+        <style>
+            .content-box {
+                
+                width: 80%;
+                height: 100%;
+                border: 6px solid #fd0000;
+                border: 6px solid #fd0000;
+                border-radius: 39px 39px 39px 39px;
+                -webkit-border-radius: 39px 39px 39px 39px;
+                -moz-border-radius: 39px 39px 39px 39px;
+                text-align: center;
+                box-shadow: 18px 10px 107px 54px rgba(0, 0, 0, 0.45);
+                -webkit-box-shadow: 18px 10px 107px 54px rgba(0, 0, 0, 0.45);
+                -moz-box-shadow: 18px 10px 107px 54px rgba(0, 0, 0, 0.45);
+                /* Centra el contenido horizontalmente */
+                color: aliceblue;
+            }
+            .formPage {
+            display: flex;
+            justify-content: center; /* Centra horizontalmente */
+            align-items: center; /* Centra verticalmente */
+            height: 50vh; /* Esto es opcional y asegurará que el contenedor esté centrado verticalmente en la página */
+        }
+                /* Estilos adicionales para ajustar el contenedor */
+                .content-box {
+                border: 6px solid #fd0000;
+                border-radius: 39px; /* Simplificado para todos los lados */
+                text-align: center;
+                box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5); /* Modificado para una sombra más sutil */
+                color: aliceblue;
+            }
+            /* Estilos adicionales para hacer el contenido más legible en dispositivos móviles */
+            @media (max-width: 768px) {
+                .content-box {
+                    border-radius: 20px; /* Ajusta el radio de borde para dispositivos móviles */
+                }
+                .formWrapper {
+                    font-size: 10px; /* Ajusta el tamaño del texto para dispositivos móviles */
+                }
+            }
+        
+        </style>
+    </head>
+    <div class="formPage my-xl">
+        <div class="content-box">
+            <div class="formWrapper">
+                <h1 style="padding: 20px;">Nuestra Pasión por la Música</h1>
+                <p style="font-size: larger; "> <b>En Mi Genio Amor, somos un equipo apasionado y amantes del rock y la
+                        música en general. Nos
+                        dedicamos a promover y compartir la trayectoria de seis increíbles bandas de rock Argentino, ofreciendo
+                        contenido
+                        exclusivo y fotografías para que los fans puedan disfrutar y estar al tanto de todas las
+                        novedades.descubrir y disfrutar de la música de las seis bandas seleccionadas, proporcionando
+                        una experiencia única y enriquecedora para todos. </b></p>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}

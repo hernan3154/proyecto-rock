@@ -1,0 +1,58 @@
+{% extends "plantillab/base.html" %}
+{% load static %}
+{% block content %}
+<header>
+    <link rel="stylesheet" href="{%static 'css/pesentacion.css'%}">
+    <style>
+        body { overflow: hidden; }
+        .red-card-body {
+            background-color: red;
+        }
+
+    </style>
+</header>
+<main>
+    <div class="spotify-container"><!--reproductor de spotify-->
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/6ZIgPKHzpcswB8zh7sRIhx?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+    <div class="album py-8 bg-">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-md-4 g-3">
+                {% for photo in divididos_objects %}
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body red-card-body">
+                            <img src="{{ photo.image.url }}" alt="{{ photo.title }}"  class="card-img-top img-fluid zoom-img" onclick="expandImage(this)">
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                
+            </div>
+            <br><br>
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/FTUnujHts6w?si=WtXuQn77tIFQvq0r" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/VJFCAvYAYFs?si=gnrTVHkhsGq7h7fZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/WqpIOQ8QW8g?si=vBzsWcm32wTKf5aJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+    <aside class="pres">
+        <h1 style="justify-content: left">Presentaciones</h1>
+        {% for lugar in lugares %}
+        <h2>{{ lugar.lugar }}</h2>
+        <p>Fecha: {{ lugar.fecha }}</p>
+        <p>Hora: {{ lugar.hora }}</p>
+        <p>Descripción: {{ lugar.descripcion }}</p>
+        {% if lugar.imagen %}
+        <img src="{{ lugar.imagen.url }}" alt="Imagen del lugar" style="width: 100px;">
+        {% endif %}
+        {% endfor %}
+</aside>
+</main>
+<script src="{% static 'js/ampliar-imagen.js' %}"></script>
+<script src="{% static 'assets/dist/js/bootstrap.bundle.min.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+{% endblock %}

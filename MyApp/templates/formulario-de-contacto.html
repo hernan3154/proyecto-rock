@@ -1,0 +1,72 @@
+
+{%load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formulario de Contacto</title>
+        <style>
+            body { overflow: hidden; }
+            /* Estilos para el formulario (puedes personalizarlos según tu preferencia) */
+            form {
+                max-width: 500px;
+                margin: 0 auto;
+                padding: 20px;
+                border: 1px solid #d61a1a;
+                border-radius: 5px;
+            }
+            label{
+                color: aliceblue;
+            }
+
+            input[type="text"],
+            input[type="email"],
+            textarea {
+                background-color: rgb(36, 37, 37);
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 10px;
+                border: 1px solid #dc0505;
+                border-radius: 3px;
+            }
+
+            textarea {
+                height: 150px;
+            }
+
+            input[type="submit"] {
+                background-color: #c40707;
+                color: rgb(16, 15, 15);
+                padding: 10px 20px;
+                border: none;
+                border-radius: 3px;
+                cursor: pointer;
+            }
+
+            input[type="submit"]:hover {
+                background-color: #b00202;
+            }
+        </style>
+    </head>
+
+    <body style="background-image: url(/static/fondo-nav/artwork.png);">
+        <h2 style="text-align: center; color: aliceblue;">Formulario de Contacto</h2>
+        <form method="post">
+            {% csrf_token %}
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" required></textarea>
+
+            <input type="submit" value="Enviar">
+        </form>
+    </body>
+
+</html>

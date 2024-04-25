@@ -1,0 +1,95 @@
+
+html,body{
+    /*position: relative;*/
+    /*height: 100%;*/
+    width: 100%!important;
+    overflow-x: hidden!important;
+    overflow:none;
+}
+
+body{
+    background-color: rgb(241, 8, 8);
+    font-family: Helvetica  ;
+    font-size: 14px;
+    color: #000;
+    margin: 0px;
+    padding: 0px;
+
+}
+
+.swiper{
+    width: 100%;
+    padding:  0px 0 10px 0;
+}
+
+.swiper-slide{
+    width: 300px;
+    height: 500px;
+    background-color: #f60606;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    padding: 40px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icons i {
+    font-size: 20px;
+    color: #030303 ;
+}
+.icons img{
+    width: 170px;
+}
+
+.product-content{
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-txt{
+    flex-basis: 50% ;
+    text-align: left;
+}
+
+.product-txt span{
+    font-size: 25px;
+    color: #ffb900;
+    font-weight: bold;
+}
+
+/*.product-txt h3{
+    font-size: 20px;
+    color: #ffffff;
+    text-transform: uppercase ;
+}*/
+
+.product-txt p{
+    font-size: 14px;
+    color: #c4c4c4;
+}
+
+.product-img{
+    flex-basis: 100%;
+    text-align: center;
+}
+
+.product-img, img{
+    width: 110%;
+}
+
+.btn-1{
+    display: inline-block;
+    padding: 13px 55px ;
+    border: 1px solid #ffb900;
+    border-radius: 25px;
+    color: #ffb900;
+    text-decoration: none;
+    margin-top: 50px;
+}
+
+/* videos de youtube*/

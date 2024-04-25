@@ -1,0 +1,372 @@
+{% extends "plantillab/base.html"%}
+{% load static %}
+{% block content %}
+
+<head>
+  
+  <link href="{%static 'css/cs.css'%}">
+
+  <style>
+    body {
+      overflow: hidden;
+    }
+  </style>
+  <script>
+    window.addEventListener('beforeunload', function (e) {
+      $.ajax({ url: '/logout', async: false });  // Corrección: Agregué un punto y coma al final
+    });
+  </script>
+</head>
+
+<body style="background-color: red;">
+  <main>
+    <!--carrusel-->
+    <!--***************************************************************************-->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide ">
+          <div class="icons">
+            <i class="fa-solid fa-circle-arrow-left"></i>
+            <img src="/static/img/logo/1LOGO-removebg-preview.png" alt="">
+            <i class="fa-regular fa-heart"></i>
+          </div>
+          <div class="product-content">
+            <div class="product-img">
+              <img src="static/img/carrousel/foto1.jpeg" alt="">
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="icons">
+            <i class="fa-solid fa-circle-arrow-left"></i>
+            <img src="/static/img/logo/1LOGO-removebg-preview.png" alt="">
+            <i class="fa-regular fa-heart"></i>
+          </div>
+          <div class="product-content">
+            <div class="product-img" style="height: 100%;">
+              <img src="static/img/carrousel/dividido2.jpeg" alt="">
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="icons">
+            <i class="fa-solid fa-circle-arrow-left"></i>
+            <img src="/static/img/logo/1LOGO-removebg-preview.png" alt="">
+            <i class="fa-regular fa-heart"></i>
+          </div>
+          <div class="product-content">
+            <div class="product-img">
+              <img src="static/img/carrousel/foto14.jpeg" alt="" class="w-100">
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="icons">
+            <i class="fa-solid fa-circle-arrow-left"></i>
+            <img src="/static/img/logo/1LOGO-removebg-preview.png" alt="">
+            <i class="fa-regular fa-heart"></i>
+          </div>
+          <div class="product-content">
+            <div class="product-img">
+              <img src="static/img/carrousel/indio6.jpeg" alt="" class="w-100">
+            </div>
+          </div>
+        </div>
+
+
+        <div class="swiper-slide">
+          <div class="icons">
+            <i class="fa-solid fa-circle-arrow-left"></i>
+            <img src="/static/img/logo/1LOGO-removebg-preview.png" alt="">
+            <i class="fa-regular fa-heart"></i>
+          </div>
+          <div class="product-content">
+            <div class="product-img">
+              <img src="static/img/carrousel/las_pelotas5.jpeg" alt="">
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="icons">
+            <i class="fa-solid fa-circle-arrow-left"></i>
+            <img src="/static/img/logo/1LOGO-removebg-preview.png" alt="">
+            <i class="fa-regular fa-heart"></i>
+          </div>
+          <div class="product-content">
+            <div class="product-img">
+              <img src="static/img/carrousel/no_te_va_gustar20.jpeg" alt="">
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="icons">
+            <i class="fa-solid fa-circle-arrow-left"></i>
+            <img src="/static/img/logo/1LOGO-removebg-preview.png" alt="">
+            <i class="fa-regular fa-heart"></i>
+          </div>
+          <div class="product-content">
+            <div class="product-img">
+              <img src="static/img/carrousel/dividido2.jpeg" alt="">
+            </div>
+          </div>
+        </div>
+
+
+        <div class="swiper-slide">
+          <div class="icons">
+            <i class="fa-solid fa-circle-arrow-left"></i>
+            <img src="/static/img/logo/1LOGO-removebg-preview.png" alt="">
+            <i class="fa-regular fa-heart"></i>
+          </div>
+          <div class="product-content">
+            <div class="product-img">
+              <img src="static/img/carrousel/foto4.jpg" alt="">
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="icons">
+            <i class="fa-solid fa-circle-arrow-left"></i>
+            <img src="/static/img/logo/1LOGO-removebg-preview.png" alt="">
+            <i class="fa-regular fa-heart"></i>
+          </div>
+          <div class="product-content">
+            <div class="product-img">
+              <img src="static/img/carrousel/indio15.jpeg" alt="">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!--*******audio******* -->
+    <audio controls autoplay>
+      <source src="static/audio/08 Mi Genio Amor (Acustico).mp3" type="audio/mpeg">
+      Tu navegador no soporta el elemento de audio.
+    </audio>
+ 
+    <!--*******audio******* -->
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        //effect: "coverflow",
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        loop: true,
+        //flipEffect: {
+        //slideShadows: true,
+        //limitRotation: true,
+        //},
+        coverflowEffect: {
+          depth: 100,
+          modifer: 1,
+          slidesShadows: true,
+          rotate: 0,
+          stretch: 0
+        },
+        autoplay: {
+          delay: 1000, // Cambia este valor para ajustar la velocidad de giro en milisegundos
+          disableOnInteraction: false, // Para que no se detenga al interactuar con el carrusel
+        }
+      })
+
+    </script>
+    <!--***************************************************************************-->
+    <!-- Marketing messaging and featurettes
+  ================================================== -->
+
+    <div class="container marketing">
+
+      <!-- Three columns of text below the carousel -->
+      <!-- START THE FEATURETTES -->
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading fw-normal lh-1">Indio Solari<span class="text-body-secondary"> Musico
+              Compositor </span></h2>
+          <p class="lead">Hace 75 años nacía en Paraná, Entre Ríos, Carlos, el hijo de José Solari y Celina Estelita
+            Choy, el hombre que décadas después comenzaría un camino en el que marcaría una impronta indeleble en la
+            música argentina como líder de Patricio Rey y sus Redonditos de Ricota.
+            En 1976, en la ciudad de La Plata, forma Los Redondos junto a Skay Beilinson. La banda editó
+            nueve álbumes de estudio hasta su disolución en 2001. La carrera de Solari entró en un
+            hiatus
+            hasta 2004 cuando presentó el primer álbum del Indio Solari y los Fundamentalistas del Aire
+            Acondicionado titulado El tesoro de los inocentes. En el 2007 lanzó su segundo
+            disco Porco rex, en 2010 el tercero El perfume de la tempestad, en 2013 el cuarto Pajaritos,
+            bravos muchachitos, y en 2018 el quinto El ruiseñor, el amor y la muerte. Su último recital
+            en
+            vivo fue en Olavarría en 2017, en el cual murieron dos personas debido a la gran cantidad de
+            público que obtuvo. Desde entonces ha trabajado en estudio y publicado libros. En 2020,
+            ofreció
+            un concierto en el que participó de manera virtual mediante técnicas holográficas.</p>
+        </div>
+        <div class="col-md-5">
+          <a href="{% url 'inicio-sesion' %}">
+          <img src="{% static '/img/portada/indio.png'%}" alt="Indio Solari" class="img-fluid" style="cursor: pointer;">
+          </a>
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7 order-md-2 px-5">
+          <h2 class="featurette-heading fw-normal lh-1">La Renga. <span class="text-body-secondary"> La Renga es un
+              grupo musical de Hard rock</span></h2>
+          <p class="lead">La Renga es un grupo musical de Hard rock de Argentina formado en el barrio de Mataderos,
+            Buenos
+            Aires, en 1988. La formación está integrada por Gustavo "Chizzo" Nápoli (cantante principal y
+            guitarra principal), Gabriel "Tete" Iglesias (bajo) y Jorge "Tanque" Iglesias (batería), quienes
+            integran el grupo desde sus inicios,
+            mientras que Manuel "Manu" Varela se les unió en 1994, gracias a Gabriel "Chiflo" Sánchez
+            (saxo), miembro hasta 2008. <br><br>
+            <b style="color: brown;">Formación actual</b>
+            Gustavo Chizzo Nápoli: Voz y guitarra (1988 - presente).
+            Gabriel Tete Iglesias: Bajo (1988 - presente).
+            Jorge Tanque Iglesias: Batería (1988 - presente).
+            Manuel Manu Varela: Saxofón, teclados y armónica (1994 - presente).
+            <br>
+            <b style="color: brown;">Miembros anteriores</b>
+            Raúl Locura Dilelio: Guitarra (1988 - 1992).
+            Gabriel Chiflo Sánchez: Saxofón y trompeta (1991 - 2008).
+          </p>
+        </div>
+        <div class="col-md-5 order-md-1">
+          <a href="{% url 'inicio-sesion' %}">
+          <img src="{%static '/img/portada/la-renga.png'%}" alt="La Renga" class="img-fluid" style="cursor: pointer;">
+          </a>
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading fw-normal lh-1">Ciro y Los Persas <br><span class="text-body-secondary">
+              Cantante y
+              Compositor </span></h2>
+          <p class="lead">Ciro y los Persas es un grupo musical de Argentina, formado en 2009 y liderado por el
+            cantante y
+            compositor Andrés Ciro Martínez, quien fue el líder del grupo musical Los Piojos. Es considerado
+            como uno de los mejores grupos de rock de Argentina de la actualidad. El grupo ha ganado varios
+            premios durante su carrera, entre ellos dos Premios Carlos Gardel.La banda fue formada a
+            mediados de 2009, dos meses después de la despedida de Los Piojos en el Estadio de River Plate
+            ante más de 65 000 personas. Según Ciro, él no quería caer en un estado de «depresión» por la
+            ruptura de Los Piojos, es por eso que junto con el guitarrista Juan Manuel Gigena Ábalos,
+            (guitarrista que también se fue a probar a Los Piojos después de la salida de Piti Fernández)
+            decidieron armar el grupo «Los Persas»</p>
+        </div>
+        <div class="col-md-5">
+          <a href="{% url 'inicio-sesion' %}">
+          <img src="{% static '/img/portada/ciro.png'%}" alt="Indio Solari" class="img-fluid" style="cursor: pointer;">
+        </a>
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7 order-md-2 px-5">
+          <h2 class="featurette-heading fw-normal lh-1">Divididos <span class="text-body-secondary"> Grupo De Rock
+              Argentino </span></h2><br><br>
+          <p class="lead">Divididos es un grupo musical del Rock alternativo Argentina, fundado en 1988 por Ricardo
+            Mollo
+            y Diego Arnedo, exintegrantes de MAM junto a Omar Mollo2​ y de Sumo, cuando esta se disolvió por
+            la muerte de su líder, Luca Prodan. En sus trabajos, han incursionado en estilos musicales
+            locales como el folklore.3​ Ha sido galardonado en múltiples ocasiones tanto de forma grupal
+            como individual. En el 2011 fue ganador del Gardel de Oro (la distinción más destacada de la
+            música nacional) en reconocimiento a su exitosa trayectoria, premio que ha sido entregado solo
+            19 veces a distintos artistas tales como Luis Alberto Spinetta, Charly García, León Gieco,
+            Mercedes Sosa y Gustavo Cerati, entre otros.</p>
+        </div>
+        <div class="col-md-5 order-md-1">
+          <a href="{% url 'inicio-sesion' %}">
+          <img src="{% static '/img/portada/dividido.png'%}" alt="Divididos" class="img-fluid" style="cursor: pointer;">
+          </a>
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading fw-normal lh-1">Las Pelotas <span class="text-body-secondary"> Banda de Rocck
+              de Argentina </span></h2>
+          <p class="lead">Las Pelotas es un grupo musical de Argentina fundado en 1988, en la ciudad de Hurlingham,
+            Buenos
+            Aires tras la muerte de Luca Prodan, líder de Sumo, con una base formada por exintegrantes de
+            ese grupo. En 1990 se establecen en Córdoba, pero poco después se mudan a Capital Federal donde
+            actualmente residen.Tras la muerte de Luca Prodan, cantante de Sumo, el 22 de diciembre de 1987,
+            sus integrantes Ricardo Mollo, Diego Arnedo, Roberto Pettinatto, Alberto "Superman" Troglio y
+            Germán Daffunchio deciden reflexionar acerca del futuro de la banda. Daffunchio y Timmy Mc Kern
+            (productor de Sumo y amigo de Luca) vuelven a las sierras cordobesas y el resto de la banda se
+            queda ensayando en una sala del Palomar. El 5 de marzo de 1988, ya sin Luca Prodan en escena,
+            Sumo se presenta en el Chateau Rock, con Daffunchio, Mollo, Pettinato, Arnedo y Troglio.
+            Todos los integrantes vuelven a Buenos Aires, menos Germán Daffunchio, quien se queda junto con
+            Timmy en Córdoba.</p>
+        </div>
+        <div class="col-md-5">
+          <a href="{% url 'inicio-sesion' %}">
+          <img src="{% static '/img/portada/las-pelotas 3.png'%}" alt="Las Pelotas" class="img-fluid" style="cursor: pointer;">
+          </a>
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7 order-md-2 px-5">
+          <h2 class="featurette-heading fw-normal lh-1">No Te Va Gustar <span class="text-body-secondary"> Grupo
+              Musical de Uruguay </span></h2>
+          <p class="lead">No Te Va Gustar (popularmente abreviada y estilizada como NTVG) es un grupo musical de
+            Uruguay
+            formado el 25 de junio del año 1994 en Montevideo.1​ El grupo musical está integrado por
+            Emiliano Brancciari (voz y guitarra), Guzmán Silveira (bajo y coros), Diego Bartaburu (batería),
+            Martín Gil (trompeta y coros), Denis Ramos (trombón y coros), Mauricio Ortiz (saxofón barítono y
+            tenor), Pablo Coniberti (guitarra y coros) y Francisco Nasser (teclados, coros y guitarra).</p>
+        </div>
+        <div class="col-md-5 order-md-1">
+          <a href="{% url 'inicio-sesion' %}">
+          <img src="{% static '/img/portada/no-te-va-gustar.png'%}" alt="No te va gustar" class="img-fluid" style="cursor: pointer;">
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Get the theme toggle button
+    const themeToggleBtn = document.getElementById('bd-theme');
+
+    // Get the dropdown menu
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+
+    // Add event listener to the dropdown menu
+    dropdownMenu.addEventListener('click', function (event) {
+      const themeValue = event.target.dataset.bsThemeValue;
+      if (themeValue) {
+        // Set the theme to the selected value
+        setTheme(themeValue);
+      }
+    });
+
+    // Function to set the theme
+    function setTheme(theme) {
+      document.body.setAttribute('data-theme', theme);
+      // Optionally, you can save the selected theme in localStorage or cookies
+    }
+  });
+</script>
+{% endblock%}
