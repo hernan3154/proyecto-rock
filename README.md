@@ -1,4 +1,4 @@
-# Proyecto de Gestión de Usuarios y Contenidos
+# Proyecto de Gestión de Usuarios y Contenidos en Django
 
 ## Descripción
 
