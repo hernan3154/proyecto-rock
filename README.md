@@ -3,6 +3,34 @@
 ## Descripción
 
 Este proyecto es una aplicación web diseñada para gestionar usuarios y contenido multimedia relacionado con varias bandas de música. Incluye funcionalidades de registro, inicio de sesión, recuperación de contraseña, modificación de datos de usuario, y varias vistas para mostrar información de diferentes bandas de música. La aplicación está desarrollada con Django y sigue buenas prácticas de seguridad y manejo de usuarios.
+## Tecnologías Usadas
+
+- **Backend**:
+    - [Django](https://www.djangoproject.com/): Un framework web de alto nivel para el desarrollo rápido de aplicaciones web seguras y mantenibles en Python.
+    - [Django ORM](https://docs.djangoproject.com/en/stable/topics/db/queries/): Para la interacción con la base de datos.
+
+- **Frontend**:
+    - [HTML5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5): Para la estructura del contenido web.
+    - [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS): Para el diseño y la presentación visual.
+    - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript): Para la interactividad y el comportamiento dinámico.
+
+- **Base de Datos**:
+    - [SQLite](https://www.sqlite.org/index.html): Base de datos ligera utilizada en el desarrollo local.
+    - [PostgreSQL](https://www.postgresql.org/): Base de datos relacional avanzada que puede ser utilizada en producción.
+
+- **Autenticación y Autorización**:
+    - [Django Auth](https://docs.djangoproject.com/en/stable/topics/auth/): Sistema de autenticación y autorización de Django.
+
+- **Envío de Correos**:
+    - [Django Email](https://docs.djangoproject.com/en/stable/topics/email/): Para el envío de correos electrónicos, incluyendo la recuperación de contraseñas.
+
+- **Herramientas de Desarrollo**:
+    - [Visual Studio Code](https://code.visualstudio.com/): Editor de código fuente.
+    - [Git](https://git-scm.com/): Sistema de control de versiones.
+    - [GitHub](https://github.com/): Plataforma de hospedaje de código.
+
+- **Entorno Virtual**:
+    - [pipenv](https://pipenv.pypa.io/en/latest/): Herramienta para manejar dependencias de Python y entornos virtuales.
 
 ## Características
 
